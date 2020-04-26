@@ -15,6 +15,7 @@ class Dev(Default):
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "db.sqlite")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+
 class Prod(Default):
     DEBUG = False
 

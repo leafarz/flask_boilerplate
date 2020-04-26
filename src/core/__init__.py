@@ -8,6 +8,7 @@ db = SQLAlchemy()
 migrate = Migrate()
 ma = Marshmallow()
 
+
 def create_app():
     app = Flask(__name__)
     app.config.from_object(f'core.config.{config("BUILD_CONFIG").title()}')

@@ -7,5 +7,6 @@ class UserSerializer(ma.SQLAlchemyAutoSchema):
         model = User
         include_fk = True
 
+
 user_serializer = UserSerializer()
 users_serializer = UserSerializer(many=True)
