@@ -16,7 +16,9 @@ class Development(Default):
     CONFIG_NAME = "development"
     SECRET_KEY = config("SECRET_KEY_DEVELOPMENT")
 
-    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(BASEDIR, "db-dev.sqlite")
+    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
+        BASEDIR, "db-development.sqlite"
+    )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
@@ -25,7 +27,9 @@ class Production(Default):
     CONFIG_NAME = "production"
     SECRET_KEY = config("SECRET_KEY_PRODUCTION")
 
-    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(BASEDIR, "db-prod.sqlite")
+    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
+        BASEDIR, "db-production.sqlite"
+    )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
