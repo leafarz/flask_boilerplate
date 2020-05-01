@@ -12,8 +12,8 @@
     ```
 3. In `src`, create a `.env` file and add
     ```
-    BUILD_CONFIG=Dev        :: OR Prod
-    SECRET_KEY=SECRET_KEY
+    SECRET_KEY_DEVELOPMENT=SECRET_KEY
+    SECRET_KEY_PRODUCTION=SECRET_KEY
     ```
 
 ## Running
