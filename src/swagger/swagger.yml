@@ -22,7 +22,7 @@ paths:
       tags: [User]
       summary: Create user with username and email
       requestBody:
-        description: Pet to add to the store
+        description: User credentials
         required: true
         content:
           application/json:
