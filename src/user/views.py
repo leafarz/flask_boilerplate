@@ -1,4 +1,4 @@
-from flask import jsonify, request
+from flask import abort, jsonify, request
 from flask.views import MethodView
 
 from common import copy_attr
@@ -23,11 +23,11 @@ class UserAPI(MethodView):
         user = User()
         copy_attr(data, user)
 
+        db.session.add(user)
         try:
-            db.session.add(user)
             db.session.commit()
         except:
-            return {}, 200
+            abort(422)
 
         json_result = user_serializer.dump(user)
-        return json_result, 200
+        return json_result

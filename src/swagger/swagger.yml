@@ -1,0 +1,78 @@
+openapi: "3.0.2"
+info:
+  title: Flask-Boilerplate
+  version: "1.0"
+servers:
+  - url: http://127.0.0.1:5000
+paths:
+  /user/:
+    get:
+      tags: [User]
+      summary: Get all users
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+    post:
+      tags: [User]
+      summary: Create user with username and email
+      requestBody:
+        description: Pet to add to the store
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "200":
+          description: User details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "422":
+          description: Account creation failed
+  /user/{user_id}:
+    get:
+      tags: [User]
+      summary: Get user with id
+      parameters:
+        - in: path
+          name: user_id
+          schema:
+            type: integer
+            example: 1
+          required: true
+          description: ID of user
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - username
+        - email
+      properties:
+        id:
+          type: integer
+          example: null
+        username:
+          type: string
+          example: user
+        email:
+          type: string
+          example: user@email.com

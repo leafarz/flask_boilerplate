@@ -10,6 +10,9 @@ BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 class Default(object):
     DEBUG = False
 
+    SWAGGER_URL = "/api/docs"
+    SWAGGER_PATH = os.path.join(BASEDIR, "swagger/swagger.yml")
+
 
 class Development(Default):
     DEBUG = True

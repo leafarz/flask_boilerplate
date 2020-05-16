@@ -1,4 +1,6 @@
 # Flask-Boilerplate
+![img](https://github.com/leafarz/resources/blob/master/flask_boilerplate_01.PNG?raw=true)
+
 
 ## Setup
 1. In root directory, create an environment variable and activate
@@ -27,6 +29,11 @@
     ```
     python manage.py runserver
     ```
+
+
+## Swagger UI
+1. Swagger can be run on `/api/docs` endpoint
+
 
 ## Todo
 1. Not yet ready for Heroku
