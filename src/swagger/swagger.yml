@@ -39,7 +39,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/User"
         "422":
-          description: Account creation failed
+          description: Unprocessable Entity
   /user/{user_id}:
     get:
       tags: [User]

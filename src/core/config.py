@@ -10,28 +10,32 @@ BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 class Default(object):
     DEBUG = False
 
-    SWAGGER_URL = "/api/docs"
-    SWAGGER_PATH = os.path.join(BASEDIR, "swagger/swagger.yml")
 
-
-class Development(Default):
+class Dev(Default):
     DEBUG = True
-    CONFIG_NAME = "development"
-    SECRET_KEY = config("SECRET_KEY_DEVELOPMENT")
+    CONFIG_NAME = "dev"
+    SECRET_KEY = config("SECRET_KEY_DEV")
 
+    # DB
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
-        BASEDIR, "db-development.sqlite"
+        BASEDIR, "database/db-dev.sqlite"
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    # Swagger
+    SWAGGER_ENABLE = True
+    SWAGGER_URL = ""
+    SWAGGER_PATH = os.path.join(BASEDIR, "swagger/swagger.yml")
 
-class Production(Default):
+
+class Prod(Default):
     DEBUG = False
-    CONFIG_NAME = "production"
-    SECRET_KEY = config("SECRET_KEY_PRODUCTION")
+    CONFIG_NAME = "prod"
+    SECRET_KEY = config("SECRET_KEY_PROD")
 
+    # DB
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
-        BASEDIR, "db-production.sqlite"
+        BASEDIR, "database/db-prod.sqlite"
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
