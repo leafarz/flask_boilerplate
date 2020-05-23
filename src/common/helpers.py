@@ -57,14 +57,6 @@ def has_changes(source, target, ignore=[], print_diff=False):
     for k in source_json.keys():
         if k in ignore:
             continue
-        elif 'date' in k:
-            try:
-                if(hasattr(dest_model, k) and source_json[k] != getattr(dest_model, k).isoformat()):
-                    if print_diff:
-                        print(k, source_json[k], getattr(dest_model, k).isoformat())
-                    return True
-            except:
-                pass
         elif hasattr(dest_model, k) and source_json[k] != getattr(dest_model, k):
             if print_diff:
                 print(k, source_json[k], getattr(dest_model, k))
