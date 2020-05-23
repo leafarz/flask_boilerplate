@@ -2,7 +2,7 @@ import os
 
 from core import create_app
 
-env = os.getenv("FLASK_ENV") or "dev"
+env = config("FLASK_ENV")
 app = create_app(env)
 
 if __name__ == "__main__":

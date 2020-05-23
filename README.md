@@ -14,6 +14,7 @@
     ```
 3. In `src`, create a `.env` file and add
     ```
+    FLASK_ENV=dev       # or prod
     SECRET_KEY_DEVELOPMENT=SECRET_KEY
     SECRET_KEY_PRODUCTION=SECRET_KEY
     ```
@@ -29,11 +30,7 @@
     ```
     python manage.py runserver
     ```
-
-
-## Swagger UI
-1. Swagger can be run on `/api/docs` endpoint
-
+3. Open http://127.0.0.1:5000/ and it should show the Swagger-UI. This is disabled in `prod` environment.
 
 ## Todo
 1. Not yet ready for Heroku
