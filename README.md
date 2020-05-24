@@ -17,8 +17,7 @@ Flask boilerplate project with multiple API version support.
 3. In `src`, create a `.env` file and add
    ```
    FLASK_ENV=dev       # or prod
-   SECRET_KEY_DEVELOPMENT=SECRET_KEY
-   SECRET_KEY_PRODUCTION=SECRET_KEY
+   SECRET_KEY=SECRET_KEY
    ```
 
 ## Running
@@ -35,6 +34,11 @@ Flask boilerplate project with multiple API version support.
    ```
 3. Open http://127.0.0.1:5000/ and it should show the Swagger-UI. This is disabled in `prod` environment.
 
-## Todo
+## Deployment
 
-1. Not yet ready for Heroku
+- Heroku
+   1. Create heroku app
+   2. Update config with the Postgres URL from Heroku
+   3. Initialize, migrate and upgrade the database
+   4. Set the environment variables in Heroku
+   5. Deploy the app
