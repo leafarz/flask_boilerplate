@@ -9,12 +9,12 @@ BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 class Default(object):
     DEBUG = False
+    SECRET_KEY = config("SECRET_KEY")
 
 
 class Dev(Default):
     DEBUG = True
     CONFIG_NAME = "dev"
-    SECRET_KEY = config("SECRET_KEY_DEV")
 
     # DB
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
@@ -31,7 +31,6 @@ class Dev(Default):
 class Prod(Default):
     DEBUG = False
     CONFIG_NAME = "prod"
-    SECRET_KEY = config("SECRET_KEY_PROD")
 
     # DB
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
