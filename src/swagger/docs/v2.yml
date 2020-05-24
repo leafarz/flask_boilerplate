@@ -1,0 +1,58 @@
+openapi: "3.0.2"
+info:
+  title: Flask-Boilerplate
+  version: "1.0"
+servers:
+  - url: /api/v2
+paths:
+  /user/:
+    get:
+      tags: [User]
+      summary: Get all users
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+  /user/{user_id}:
+    get:
+      tags: [User]
+      summary: Get user with id
+      parameters:
+        - in: path
+          name: user_id
+          schema:
+            type: integer
+            example: 1
+          required: true
+          description: ID of user
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: Not found
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - username
+        - email
+      properties:
+        id:
+          type: integer
+          example: null
+        username:
+          type: string
+          example: user
+        email:
+          type: string
+          example: user@email.com

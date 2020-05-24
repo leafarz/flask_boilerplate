@@ -3,7 +3,7 @@ info:
   title: Flask-Boilerplate
   version: "1.0"
 servers:
-  - url: http://127.0.0.1:5000
+  - url: /api/v1
 paths:
   /user/:
     get:

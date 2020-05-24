@@ -24,8 +24,8 @@ class Dev(Default):
 
     # Swagger
     SWAGGER_ENABLE = True
-    SWAGGER_URL = ""
-    SWAGGER_PATH = os.path.join(BASEDIR, "swagger/swagger.yml")
+    SWAGGER_BASE_URL = ""
+    SWAGGER_BASE_PATH = os.path.join(BASEDIR, "swagger/docs")
 
 
 class Prod(Default):
