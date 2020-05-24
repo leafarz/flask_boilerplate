@@ -1,5 +1,4 @@
 from flask import Blueprint
-
 from user.v1.views import UserAPI
 
 user_view = UserAPI.as_view("user")
